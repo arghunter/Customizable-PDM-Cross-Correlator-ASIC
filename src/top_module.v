@@ -1,8 +1,8 @@
-`include "spi_port.v"
-`include "memory.v"
-`include "demux.v"
-`include "decimator.v"
-`include "buffer.v"
+// `include "spi_port.v"
+// `include "memory.v"
+// `include "demux.v"
+// `include "decimator.v"
+// `include "buffer.v"
 // `include "i2s_bus.v"
 
 module top_module(
