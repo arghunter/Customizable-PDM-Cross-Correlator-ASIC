@@ -18,7 +18,7 @@ module decimator (
             if (decimation_ratio == 8'b1) begin
                 // If decimation ratio is 1, simply pass the data through
                 out <= data;
-                dec_clk <= clk;
+                
             end else begin
                 counter <= counter + 1;
                 if (counter >= decimation_ratio-1) begin
@@ -29,12 +29,6 @@ module decimator (
             end
         end
     end
-    always @(negedge clk) begin
-        if (decimation_ratio == 8'b1) begin
-        // If decimation ratio is 1, simply pass the data through
-        out <= data;
-        dec_clk <= clk;
-        end
-    end
+
 
 endmodule

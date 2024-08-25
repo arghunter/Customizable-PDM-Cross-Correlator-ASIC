@@ -31,6 +31,7 @@ wire [7:0] filter_out;
 wire [15:0] capture_reg;
 wire dummy;
 wire dummy2;
+wire corr_dec_clk;
 assign addr = capture_reg[15:8];
 assign value = capture_reg[7:0];
 assign mic_clk = clk;
@@ -76,7 +77,7 @@ assign mic_clk = clk;
         .dec_clk(dummy2)           
     );
     buffer u_buffer(
-        .clk(dec_clk),         
+        .clk(corr_dec_clk),         
         .rst(rst),         
         .data_1(dec_data_1),        
         .data_2(dec_data_2),        
@@ -85,6 +86,7 @@ assign mic_clk = clk;
         .pos(pos),
         .neg(neg)   
     );
+assign corr_dec_clk = (decimation_ratio == 8'b1) ? clk : dec_clk;
 
 
 
