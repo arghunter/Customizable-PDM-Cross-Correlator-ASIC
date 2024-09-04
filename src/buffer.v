@@ -30,10 +30,10 @@ module buffer #(
             // Shift in the new data
             shift_reg_1 <= {shift_reg_1[MAX_LENGTH-2:0], data_1};
             shift_reg_2 <= {shift_reg_2[MAX_LENGTH-2:0], data_2};
-            corr = corr + (data_1 ^ data_2) - (shift_reg_1[MAX_LENGTH - 1] ^ shift_reg_2[MAX_LENGTH - 1]) ;
+            corr <= corr + (data_1 ^ data_2) - (shift_reg_1[MAX_LENGTH - 1] ^ shift_reg_2[MAX_LENGTH - 1]) ;
             if (length > 1) begin
-                corr_neg = corr_neg + (shift_reg_1[0] ^ data_2) - (shift_reg_1[MAX_LENGTH - 1] ^ shift_reg_2[MAX_LENGTH - 2]);
-                corr_pos = corr_pos + (data_1 ^ shift_reg_2[0]) - (shift_reg_1[MAX_LENGTH - 2] ^ shift_reg_2[MAX_LENGTH - 1]);
+                corr_neg <= corr_neg + (shift_reg_1[0] ^ data_2) - (shift_reg_1[MAX_LENGTH - 1] ^ shift_reg_2[MAX_LENGTH - 2]);
+                corr_pos <= corr_pos + (data_1 ^ shift_reg_2[0]) - (shift_reg_1[MAX_LENGTH - 2] ^ shift_reg_2[MAX_LENGTH - 1]);
             end
 
 
