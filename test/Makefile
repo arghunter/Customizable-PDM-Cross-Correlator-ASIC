@@ -6,6 +6,12 @@ SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = project.v
+PROJECT_SOURCES +=  buffer.v
+PROJECT_SOURCES +=  decimator.v
+PROJECT_SOURCES +=  demux.v
+PROJECT_SOURCES +=  memory.v
+PROJECT_SOURCES +=  spi_port.v
+PROJECT_SOURCES +=  top_module.v
 
 ifneq ($(GATES),yes)
 
