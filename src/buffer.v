@@ -39,14 +39,14 @@ module buffer #(
 
             // Determine if corr_neg or corr_pos is greater
             if (corr_neg < corr_pos) begin
-                neg = 1;
-                pos = 0;
+                neg <= 1'b1;
+                pos <= 1'b0;
             end else if (corr_pos < corr_neg) begin
-                pos = 1;
-                neg = 0;
+                pos <= 1'b1;
+                neg <= 1'b0;
             end else begin
-                pos = 0;
-                neg = 0;
+                pos <= 1'b0;
+                neg <= 1'b0;
             end
         end
     end
